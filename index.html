@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<link href= "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<style>
+		.container{
+			background-color: #293572;
+		}
+		p{
+			text-align: center;
+		}
+	</style>
+	<body>
+		<p>
+			<div class="d-flex justify-content-center fs-1 fw-bold ">Demo de Contador</div>
+			<div class="d-flex justify-content-center fs-1 fw-bold "style="color: #016064;"></div>
+		</p>
+		<p>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm">
+						<p class="text-warning">MAX</p>
+						<p id='maxContadorText' data-value="99" class="fs-2 text-warning">99</p>
+					</div>
+					<div class="col-sm">
+						<p id='contadorText' data-value="0" class="fs-2 text-light">0</p>
+						<p class="text-light">Valor contador</p>
+					</div>
+					<div class="col-sm">
+						<p id='parcialText' data-value="0" class="fs-2 text-light">0</p>
+						<p class="text-light">Valor parcial</p>
+					</div>
+					<div class="col-sm">
+						<p class="fs-2">
+							<button type="button" class="btn btn-outline-primary" onclick="increment()">Incrementar</button>
+						</p>
+						<p>
+							<button type="button" class="btn btn-outline-primary" onclick="increment10()">Incrementar 10x</button>
+						</p>
+					</div>
+				</div>
+			</div>
+		</p>
+	</body>
+	<script>
+
+		let max = document.getElementById('maxContadorText');
+		let contador = document.getElementById('contadorText');
+      	let parcial = document.getElementById('parcialText');
+
+		const increment = () => {
+			contador.dataset.value++;
+			if (contador.dataset.value * 1 > max.dataset.value * 1) {
+				contador.dataset.value = 0;
+			}
+			contador.innerHTML = contador.dataset.value;
+			
+			parcial.dataset.value++;
+			parcial.innerHTML = parcial.dataset.value;
+		}
+
+		const increment10 = () => {
+			for (i = 0; i < 10; i++) {increment();}
+		}
+	</script>
+</html>
