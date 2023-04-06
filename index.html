@@ -11,7 +11,7 @@
 	</style>
 	<body>
 		<p>
-			<div class="d-flex justify-content-center fs-1 fw-bold ">Demo de Contador</div>
+			<div class="d-flex justify-content-center fs-1 fw-bold ">Counter Simulator Demo</div>
 			<div class="d-flex justify-content-center fs-1 fw-bold "style="color: #016064;"></div>
 		</p>
 		<p>
@@ -19,22 +19,22 @@
 				<div class="row">
 					<div class="col-sm">
 						<p class="text-warning">MAX</p>
-						<p id='maxContadorText' data-value="99" class="fs-2 text-warning">99</p>
+						<p id='maxCounterText' data-value="99" class="fs-2 text-warning">99</p>
 					</div>
 					<div class="col-sm">
-						<p id='contadorText' data-value="0" class="fs-2 text-light">0</p>
-						<p class="text-light">Valor contador</p>
+						<p id='counterText' data-value="0" class="fs-2 text-light">0</p>
+						<p class="text-light">Counter</p>
 					</div>
 					<div class="col-sm">
 						<p id='parcialText' data-value="0" class="fs-2 text-light">0</p>
-						<p class="text-light">Valor parcial</p>
+						<p class="text-light">Parcial</p>
 					</div>
 					<div class="col-sm">
 						<p class="fs-2">
-							<button type="button" class="btn btn-outline-primary" onclick="increment()">Incrementar</button>
+							<button type="button" class="btn btn-outline-primary" onclick="increment()">Increment</button>
 						</p>
 						<p>
-							<button type="button" class="btn btn-outline-primary" onclick="increment10()">Incrementar 10x</button>
+							<button type="button" class="btn btn-outline-primary" onclick="increment10()">Increment 10x</button>
 						</p>
 					</div>
 				</div>
@@ -43,16 +43,16 @@
 	</body>
 	<script>
 
-		let max = document.getElementById('maxContadorText');
-		let contador = document.getElementById('contadorText');
+		let max = document.getElementById('maxCounterText');
+		let counter = document.getElementById('counterText');
       	let parcial = document.getElementById('parcialText');
 
 		const increment = () => {
-			contador.dataset.value++;
-			if (contador.dataset.value * 1 > max.dataset.value * 1) {
-				contador.dataset.value = 0;
+			counter.dataset.value++;
+			if (counter.dataset.value * 1 > max.dataset.value * 1) {
+				counter.dataset.value = 0;
 			}
-			contador.innerHTML = contador.dataset.value;
+			counter.innerHTML = counter.dataset.value;
 			
 			parcial.dataset.value++;
 			parcial.innerHTML = parcial.dataset.value;
